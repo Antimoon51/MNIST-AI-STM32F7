@@ -163,6 +163,8 @@ int main(void)
 	
 	
 	BSP_LCD_Clear(LCD_COLOR_BLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+	BSP_LCD_DisplayStringAt(0,0,(uint8_t * ) ("Simple NN"), CENTER_MODE);
 	
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
   BSP_LCD_FillRect(22, 22, 196, 196);
@@ -209,6 +211,7 @@ int main(void)
 		while(BSP_PB_GetState(BUTTON_WAKEUP) !=RESET);		// Wait for Button release (do (nothing)while(buttonpressed);)
 
 		BSP_LCD_Clear(LCD_COLOR_BLUE);
+		BSP_LCD_DisplayStringAt(0,0,(uint8_t * ) ("Simple NN"), CENTER_MODE);
 	
 		BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 		BSP_LCD_FillRect(22, 22, 196, 196);
@@ -384,6 +387,7 @@ void draw_touch_position(void) {
 					while(BSP_PB_GetState(BUTTON_WAKEUP) !=RESET);		// Wait for Button release (do (nothing)while(buttonpressed);)
 					
 					BSP_LCD_Clear(LCD_COLOR_BLUE);
+					BSP_LCD_DisplayStringAt(0,0,(uint8_t * ) ("Simple NN"), CENTER_MODE);
 	
 					BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 					BSP_LCD_FillRect(22, 22, 196, 196);

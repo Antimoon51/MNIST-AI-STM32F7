@@ -3,7 +3,7 @@
 <title>Static Call Graph - [mnist_cnn\mnist_cnn.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image mnist_cnn\mnist_cnn.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Oct 05 10:11:07 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Oct 05 15:30:15 2020
 <BR><P>
 <H3>Maximum Stack Usage =        480 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -619,6 +619,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAtLine
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_Calibration
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_touch_position
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchscreenCalibration_SetHint
 </UL>
@@ -1800,7 +1801,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
 </UL>
 
-<P><STRONG><a name="[13e]"></a>draw_touch_position</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, main.o(i.draw_touch_position))
+<P><STRONG><a name="[13e]"></a>draw_touch_position</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, main.o(i.draw_touch_position))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = draw_touch_position &rArr; BSP_TS_GetState &rArr; BSP_TS_Get_GestureId &rArr; ft6x06_TS_GetGestureID &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -1940,7 +1941,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ft6x06.o(.data)
 </UL>
-<P><STRONG><a name="[7b]"></a>main</STRONG> (Thumb, 540 bytes, Stack size 104 bytes, main.o(i.main))
+<P><STRONG><a name="[7b]"></a>main</STRONG> (Thumb, 568 bytes, Stack size 104 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 480<LI>Call Chain = main &rArr; Touchscreen_Calibration &rArr; TouchScreen_Calibration_GetPhysValues &rArr; TouchScreen_Calibration_WaitForPressedState &rArr; BSP_TS_GetState &rArr; BSP_TS_Get_GestureId &rArr; ft6x06_TS_GetGestureID &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -1951,6 +1952,7 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillRect
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAtLine
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Clear
 <LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_Calibration

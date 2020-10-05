@@ -3,7 +3,7 @@
 <title>Static Call Graph - [mnist_simple_nn\mnist_simple_nn.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image mnist_simple_nn\mnist_simple_nn.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Oct 03 13:00:44 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Oct 05 15:25:27 2020
 <BR><P>
 <H3>Maximum Stack Usage =        480 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -615,6 +615,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAtLine
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_Calibration
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchscreenCalibration_SetHint
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_touch_position
 </UL>
 
@@ -1146,14 +1147,14 @@ Global Symbols
 <P><STRONG><a name="[d7]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 386 bytes, Stack size 16 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_TIM_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutCallback
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_Break2Callback
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_UP_TIM10_IRQHandler
 </UL>
@@ -1418,12 +1419,12 @@ Global Symbols
 <P><STRONG><a name="[f7]"></a>SystemClock_Config</STRONG> (Thumb, 180 bytes, Stack size 216 bytes, main.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 316<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWR_EnableBkUpAccess
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1577,12 +1578,12 @@ Global Symbols
 <P><STRONG><a name="[f0]"></a>aiInit</STRONG> (Thumb, 82 bytes, Stack size 56 bytes, app_x-cube-ai.o(i.aiInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = aiInit &rArr; ai_network_init &rArr; ai_platform_network_post_init &rArr; ai_platform_context_acquire &rArr; CRC_Lock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_data_weights_get
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_data_weights_get
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_init
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_get_error
 <LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_destroy
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_create
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_X_CUBE_AI_Init
 </UL>
@@ -1716,8 +1717,8 @@ Global Symbols
 <P><STRONG><a name="[127]"></a>ai_platform_network_get_error</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, ai_platform_interface.o(i.ai_platform_network_get_error))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = ai_platform_network_get_error &rArr; ai_platform_context_acquire &rArr; CRC_Lock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_get_error
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_get_error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_get_error
 </UL>
@@ -1725,9 +1726,9 @@ Global Symbols
 <P><STRONG><a name="[128]"></a>ai_platform_network_init</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, ai_platform_interface.o(i.ai_platform_network_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = ai_platform_network_init &rArr; ai_platform_context_acquire &rArr; CRC_Lock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_init
 </UL>
@@ -1735,8 +1736,8 @@ Global Symbols
 <P><STRONG><a name="[12a]"></a>ai_platform_network_post_init</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, ai_platform_interface.o(i.ai_platform_network_post_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = ai_platform_network_post_init &rArr; ai_platform_context_acquire &rArr; CRC_Lock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_init
 </UL>
@@ -1744,11 +1745,11 @@ Global Symbols
 <P><STRONG><a name="[12b]"></a>ai_platform_network_process</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, ai_platform_interface.o(i.ai_platform_network_process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = ai_platform_network_process &rArr; _platform_network_io_bind &rArr; ai_array_to_buffer_fmt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_layers_forward_all
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_layers_forward_all
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_network_state_update_output
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_network_state_update_input
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_network_io_bind
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_context_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_network_run
 </UL>
@@ -1756,9 +1757,9 @@ Global Symbols
 <P><STRONG><a name="[112]"></a>ai_platform_network_set_error</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, ai_platform_interface.o(i.ai_platform_network_set_error))
 <BR><BR>[Calls]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_set_error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_network_io_bind
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_post_init
+<BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_post_init
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_init
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_platform_network_io_bind
 </UL>
 
 <P><STRONG><a name="[12f]"></a>core_get_error</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, core_common.o(i.core_get_error))
@@ -1773,7 +1774,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ai_platform_network_set_error
 </UL>
 
-<P><STRONG><a name="[131]"></a>draw_touch_position</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, main.o(i.draw_touch_position))
+<P><STRONG><a name="[131]"></a>draw_touch_position</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, main.o(i.draw_touch_position))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = draw_touch_position &rArr; BSP_TS_GetState &rArr; BSP_TS_Get_GestureId &rArr; ft6x06_TS_GetGestureID &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
@@ -1901,7 +1902,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ft6x06.o(.data)
 </UL>
-<P><STRONG><a name="[78]"></a>main</STRONG> (Thumb, 540 bytes, Stack size 104 bytes, main.o(i.main))
+<P><STRONG><a name="[78]"></a>main</STRONG> (Thumb, 568 bytes, Stack size 104 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 480<LI>Call Chain = main &rArr; Touchscreen_Calibration &rArr; TouchScreen_Calibration_GetPhysValues &rArr; TouchScreen_Calibration_WaitForPressedState &rArr; BSP_TS_GetState &rArr; BSP_TS_Get_GestureId &rArr; ft6x06_TS_GetGestureID &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
@@ -1909,6 +1910,7 @@ Global Symbols
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillRect
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAtLine
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Clear
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
