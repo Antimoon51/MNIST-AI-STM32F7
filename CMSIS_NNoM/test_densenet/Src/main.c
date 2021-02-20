@@ -60,6 +60,7 @@ static void CPU_CACHE_Enable(void);
 
 void processingdata(void);
 void draw_touch_position(void);
+void print_prediction(void);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -112,12 +113,7 @@ int main(void)
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
   BSP_LCD_FillRect(22, 22, 196, 196);
 	
-	id_prob first_guess;
-  id_prob second_guess;
-  first_guess.prob = 0.0;
-  second_guess.prob = 0.0;
-  char first_guess_str[12];
-  char second_guess_str[12];
+	
 	
 	nnom_model_t* model;
 	
@@ -137,18 +133,10 @@ int main(void)
       
 			memcpy(nnom_input_data, input, sizeof(nnom_input_data));
 			model_run(model);
+			print_prediction();
 			
-			for(int i = 0; i < 10; ++i){
-					if(first_guess.prob < nnom_output_data[i]){
-						second_guess.id = first_guess.id;
-						second_guess.prob = first_guess.prob;
-						first_guess.prob = nnom_output_data[i];
-						first_guess.id = i;
-					}else if(second_guess.prob < nnom_output_data[i]){
-						second_guess.id = i;
-						second_guess.prob = nnom_output_data[i];
-					}
-		}
+			
+			free(input);
     }
     Toggle_Leds();
   }
@@ -169,11 +157,42 @@ void Error_Handler(void)
 }
 
 /**
+  * @brief  Prints the networks prediction on the screen.
+  * @param  None
+  * @retval None
+  */
+void print_prediction(void){
+	id_prob first_guess;
+  id_prob second_guess;
+  first_guess.prob = 0.0;
+  second_guess.prob = 0.0;
+  char first_guess_str[12];
+  char second_guess_str[12];
+	
+	for(int i = 0; i < 10; ++i){
+		
+		if(first_guess.prob < nnom_output_data[i]){
+			second_guess.id = first_guess.id;
+			second_guess.prob = first_guess.prob;
+			first_guess.prob = nnom_output_data[i];
+			first_guess.id = i;
+		}else if(second_guess.prob < nnom_output_data[i]){
+			second_guess.id = i;
+			second_guess.prob = nnom_output_data[i];
+		}
+	}
+	sprintf(first_guess_str ,"%d (%.4f)", first_guess.id , first_guess.prob);
+	sprintf(second_guess_str,"%d (%.4f)", second_guess.id , second_guess.prob);
+	BSP_LCD_SetFont(&Font12);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+	BSP_LCD_DisplayStringAtLine(0, (uint8_t *) first_guess_str);
+	BSP_LCD_DisplayStringAtLine(1, (uint8_t *) second_guess_str);
+}
+/**
   * @brief  Drawing pixels on Touchscreen, where touch is detected
   * @param  None
   * @retval None
   */
-
 void draw_touch_position(void) {
     /* Get X and Y position of the first touch post calibrated */
 #define FootprintRadius 10
